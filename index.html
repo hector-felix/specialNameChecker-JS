@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- e4_9.html - Exercise 4.9
+-->
+<html lang = "en">
+    <head>
+        <title> Exercise 4.9 </title>
+        <meta charset = "utf-8" />
+        <script type = "text/javascript">
+            function e_names(names) { //function
+                var len, index, count = 0; 
+                len = names.length;
+                // Loop to use pattern matching to produce the count
+                
+                for (index = 0; index < len; index++) {
+                    position1 = names[index].search(/ie$/);
+                    position2 = names[index].search(/y$/);
+                    if (position1+position2> -2)
+                        count++;
+                }
+                return count;
+            }      
+        </script>
+    </head>
+    <body>
+        <script type = "text/javascript">
+    
+            //Function e_names tester
+    
+            var new_names = [];
+    
+            for (var i = 0; i < 4; i++) {
+                new_names[i] = prompt("Please enter Name " + (i+1) + ":", "Name " + (i+1));
+                document.write("Name " + (i+1) + " : " + new_names[i] + "<br/>");
+            }
+            
+            result = e_names(new_names);
+            //new_names.toString();
+            document.write("The number of special names is: " + result + "<br/>");
+                
+        </script>
+    </body>
+</html>
